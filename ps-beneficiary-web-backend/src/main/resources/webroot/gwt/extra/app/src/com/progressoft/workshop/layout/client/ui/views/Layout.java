@@ -1,7 +1,9 @@
 package com.progressoft.workshop.layout.client.ui.views;
 
-import com.vaadin.polymer.app.AppDrawerElement;
+import com.progressoft.workshop.layout.shared.extension.LayoutContext;
 import com.vaadin.polymer.app.AppHeaderElement;
+import com.vaadin.polymer.vaadin.VaadinGridElement;
+import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import jsinterop.base.Js;
 import org.jboss.gwt.elemento.core.IsElement;
@@ -12,21 +14,17 @@ import org.jboss.gwt.elemento.template.Templated;
 abstract class Layout implements IsElement<HTMLElement> {
 
     @DataElement
-    public HTMLElement header;
+    public AppHeaderElement header;
 
     @DataElement
-    public HTMLElement drawer;
+    public HTMLDivElement contentDiv;
 
 
-    public static Layout create(){
+    public static Layout create() {
         return new Templated_Layout();
     }
 
-    public AppHeaderElement getHeader() {
-        return Js.cast(header);
-    }
-
-    public AppDrawerElement getDrawer() {
-        return Js.cast(drawer);
+    public void setContent(LayoutContext.Content isWidget) {
+        contentDiv.appendChild(Js.cast(isWidget));
     }
 }

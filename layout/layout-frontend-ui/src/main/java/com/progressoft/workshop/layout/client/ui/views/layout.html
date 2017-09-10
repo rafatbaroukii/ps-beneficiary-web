@@ -39,11 +39,27 @@
       }
     }
 
+    .contentContainer{
+        margin-top: 64px !important;
+    }
+
+
 
     </style>
     <app-header reveals data-element="header">
         <app-toolbar>
-            <div main-title>Beneficiary ttt</div>
+            <div main-title>Beneficiary</div>
         </app-toolbar>
     </app-header>
+    <div class="contentContainer" data-element="contentDiv">
+        <vaadin-grid data-element="appgrid" visible-rows="8" selection-mode="multi">
+            <table>
+                <colgroup>
+                    <col name="name" width="150px">
+                    <col name="surname" width="150px">
+                    <col name="role" flex>
+                </colgroup>
+            </table>
+        </vaadin-grid>
+    </div>
 </div>

@@ -11,6 +11,8 @@ import com.vaadin.polymer.iron.IronIconsElement;
 import com.vaadin.polymer.paper.PaperButtonElement;
 import com.vaadin.polymer.paper.PaperIconButtonElement;
 import com.vaadin.polymer.paper.PaperProgressElement;
+import com.vaadin.polymer.vaadin.Column;
+import com.vaadin.polymer.vaadin.VaadinGridElement;
 
 import java.util.Arrays;
 import java.util.logging.Logger;
@@ -37,7 +39,8 @@ public class AppClientModule implements EntryPoint {
                 IronIconsElement.SRC,
                 PaperIconButtonElement.SRC,
                 PaperProgressElement.SRC,
-                PaperButtonElement.SRC));
+                PaperButtonElement.SRC,
+                VaadinGridElement.SRC));
 
         ClientApp.make().run();
         LOGGER.info("ps-beneficiary-web Application frontend have been initialized.");

@@ -6,16 +6,13 @@ import com.progressoft.brix.domino.api.client.annotations.ClientModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@ClientModule(name="LayoutUI")
+@ClientModule(name = "LayoutUI")
 public class LayoutUIClientModule implements EntryPoint {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(LayoutUIClientModule.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(LayoutUIClientModule.class);
 
-	public void onModuleLoad() {
-
-//		Polymer.importHref(AppDrawerElement.SRC);
-
-		LOGGER.info("Initializing Layout client UI module ...");
-		new ModuleConfigurator().configureModule(new LayoutUIModuleConfiguration());
-	}
+    public void onModuleLoad() {
+        LOGGER.info("Initializing Layout client UI module ...");
+        new ModuleConfigurator().configureModule(new LayoutUIModuleConfiguration());
+    }
 }

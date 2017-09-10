@@ -33,6 +33,7 @@ Custom property | Description | Default
 
 
 @element vaadin-upload
+@demo demo/index.html
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -56,7 +57,7 @@ Custom property | Description | Default
 
       :host(:not([nodrop])) {
         border: 1px dashed;
-        border-color: var(--divider-color,  #666);
+        border-color: var(--divider-color, #666);
         border-radius: 3px;
         overflow: hidden;
         padding: 16px;
@@ -76,6 +77,7 @@ Custom property | Description | Default
         display: none;
         z-index: 10;
       }
+
       :host([dragover])::before {
         display: block;
       }
@@ -129,7 +131,7 @@ Custom property | Description | Default
         @apply(--paper-font-button);
         padding: .43em .57em;
         background: var(--primary-color, #00B4F0);
-        color: var(--primary-font-color, #FFFFFF);
+        color: var(--primary-font-color, #FFF);
         @apply(--vaadin-upload-button-add);
       }
 
@@ -271,10 +273,10 @@ Custom property | Description | Default
        * Limit of files to upload, by default it is unlimited. If the value is
        * set to one, native file browser will prevent selecting multiple files.
        */
-       maxFiles: {
-         type: Number,
-         value: Infinity
-       },
+      maxFiles: {
+        type: Number,
+        value: Infinity
+      },
 
       /**
        * Specifies the types of files that the server accepts.
@@ -308,6 +310,14 @@ Custom property | Description | Default
         type: Boolean,
         value: false,
         observer: '_dragoverValidChanged'
+      },
+
+      /**
+       * Specifies the 'name' property at Content-Disposition
+       */
+      formDataName: {
+        type: String,
+        value: 'file'
       },
 
       /**
@@ -405,9 +415,9 @@ Custom property | Description | Default
     },
 
     listeners: {
-      dragover: '_onDragover',
-      dragleave: '_onDragleave',
-      drop: '_onDrop',
+      'dragover': '_onDragover',
+      'dragleave': '_onDragleave',
+      'drop': '_onDrop',
       'file-retry': '_onFileRetry',
       'file-abort': '_onFileAbort',
       'file-remove': '_onFileRemove',
@@ -430,7 +440,7 @@ Custom property | Description | Default
       var unitSizes = [60, 60, 24, Infinity];
       var timeValues = [0];
 
-      for (var i = 0, unitSize; i < unitSizes.length && time > 0; i++) {
+      for (var i = 0; i < unitSizes.length && time > 0; i++) {
         timeValues[i] = time % unitSizes[i];
         time = Math.floor(time / unitSizes[i]);
       }
@@ -517,14 +527,14 @@ Custom property | Description | Default
 
     _onDragover: function(event) {
       event.preventDefault();
-      if (!this._dragover) {
+      if (!this.nodrop && !this._dragover) {
         this._dragoverValid = !this._maxFilesAdded();
-      }
-      if (this._dragoverValid && !this._dragover && !this.nodrop) {
-        this._dragRippleAction('down', event);
+        if (this._dragoverValid) {
+          this._dragRippleAction('down', event);
+        }
+        this._dragover = true;
       }
       event.dataTransfer.dropEffect = !this._dragoverValid || this.nodrop ? 'none' : 'copy';
-      this._dragover = true;
     },
 
     _onDragleave: function(event) {
@@ -550,7 +560,7 @@ Custom property | Description | Default
     },
 
     // Override for tests
-    _createXhr: function(file) {
+    _createXhr: function() {
       return new XMLHttpRequest();
     },
 
@@ -570,7 +580,7 @@ Custom property | Description | Default
       }
     },
 
-    _setStatus: function(file, total, loaded, elapsed, progress) {
+    _setStatus: function(file, total, loaded, elapsed) {
       file.elapsed = elapsed;
       file.elapsedStr = this._formatTime(file.elapsed, this._splitTimeByUnits(file.elapsed));
       file.remaining = Math.ceil(elapsed * (total / loaded - 1));
@@ -622,7 +632,7 @@ Custom property | Description | Default
       }.bind(this);
 
       // More reliable than xhr.onload
-      xhr.onreadystatechange = function(e) {
+      xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
           clearTimeout(stalledId);
           file.indeterminate = file.uploading = false;
@@ -652,13 +662,15 @@ Custom property | Description | Default
       }.bind(this);
 
       var formData = new FormData();
-      formData.append('file', file, file.name);
 
       file.uploadTarget = this.target || '';
+      file.formDataName = this.formDataName;
       var evt = this.fire('upload-before', {file: file, xhr: xhr}, {cancelable: true});
       if (evt.defaultPrevented) {
         return;
       }
+
+      formData.append(file.formDataName, file, file.name);
 
       xhr.open(this.method, file.uploadTarget, true);
       this._configureXhr(xhr);
@@ -688,15 +700,15 @@ Custom property | Description | Default
     },
 
     _abortFileUpload: function(file) {
-       var evt = this.fire('upload-abort', {file: file, xhr: file.xhr}, {cancelable: true});
-       if (!evt.defaultPrevented) {
-         file.abort = true;
-         if (file.xhr) {
-           file.xhr.abort();
-         }
-         this._notifyFileChanges(file);
-       }
-     },
+      var evt = this.fire('upload-abort', {file: file, xhr: file.xhr}, {cancelable: true});
+      if (!evt.defaultPrevented) {
+        file.abort = true;
+        if (file.xhr) {
+          file.xhr.abort();
+        }
+        this._notifyFileChanges(file);
+      }
+    },
 
     _notifyFileChanges: function(file) {
       var p = 'files.' + this.files.indexOf(file) + '.';
@@ -726,7 +738,7 @@ Custom property | Description | Default
         return;
       }
       var fileExt = file.name.match(/\.[^\.]*$|$/)[0];
-      var re = new RegExp('^(' + this.accept.replace(/[, ]+/g, '|').replace('/*', '/.*') + ')$', 'i');
+      var re = new RegExp('^(' + this.accept.replace(/[, ]+/g, '|').replace(/\/\*/g, '/.*') + ')$', 'i');
       if (this.accept && !(re.test(file.type) || re.test(fileExt))) {
         this.fire('file-reject', {file: file, error: this.i18n.error.incorrectFileType});
         return;
@@ -744,11 +756,19 @@ Custom property | Description | Default
       this.splice('files', this.files.indexOf(file), 1);
     },
 
-    _onAddFilesClick: function(event) {
-      if (document.createEvent) {
-        this.$.fileInput.value = '';
-        this.$.fileInput.click();
+    _onAddFilesClick: function() {
+      if (Polymer.Gestures.resetMouseCanceller) {
+        /*
+          With Polymer v1.7.1, the ghost-click prevention cancels the synthetic
+          file input click in iOS Safari. This prevents the cancelling.
+
+          See also: https://github.com/Polymer/polymer/issues/4242
+        */
+        Polymer.Gestures.resetMouseCanceller();
       }
+
+      this.$.fileInput.value = '';
+      this.$.fileInput.click();
     },
 
     _onFileInputChange: function(event) {

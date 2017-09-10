@@ -1,3 +1,9 @@
+<!--
+@license
+Copyright (c) 2016 Vaadin Ltd.
+This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
+-->
+
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-overlay-behavior/iron-overlay-behavior.html">
 <link rel="import" href="../paper-styles/shadow.html">
@@ -10,6 +16,7 @@
         display: block;
         -webkit-overflow-scrolling: touch;
         -webkit-user-select: none;
+        overflow: auto;
       }
 
       :host(:not([phone])) {
@@ -22,9 +29,14 @@
       :host([phone]) {
         /* width set to make it possible for the user make the contents fit whole screen */
         width: 100vw;
+        /* Ideally should be 100vh but iOS phone addr-bar covers view port */
+        max-height: 80vh;
+        /* Needed for iOS */
         top: auto !important;
         bottom: 0;
-        padding: 24px;
+        /* leave a space around the overlay */
+        margin: 24px;
+        /* Override desktop translate */
         transform: none !important;
       }
     </style>
@@ -36,11 +48,10 @@
       is: 'vaadin-context-menu-overlay',
 
       observers: [
-        '_positionChanged(x, y)', 'phoneChanged(phone)'
+        '_positionChanged(x, y)', '_phoneChanged(phone)'
       ],
 
       properties: {
-
         /**
          * Position of the overlay on horizontal axis.
          */
@@ -67,15 +78,10 @@
         }
       },
 
-      _preventDefault: function(e) {
-        // note: at least in Chrome, even though preventDefault() is called,
-        // the e.target still loses focus.
-        e.preventDefault();
-        e.stopPropagation();
-      },
-
-      phoneChanged: function(phone) {
-        this.withBackdrop = phone;
+      _phoneChanged: function(phone) {
+        if (!phone) {
+          this.backdropElement.style.opacity = 0;
+        }
       },
 
       // monkey patching iron-overlay-behavior to cancel overriding transform styles.
