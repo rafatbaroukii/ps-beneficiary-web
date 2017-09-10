@@ -1,0 +1,10 @@
+{
+"version":3,
+"file":"sourceMap1",
+"lineCount":5,
+"mappings":"AAmDA,iBACA,SADA,C;AC7CA,OCgBA,GDhBA,KAKA,kBACA,SADA,E,IALA,qC,CEaA,eACA,ICqEA,IA5DA,KA4DA,EAAA,ICtFA,GDsFA,EDrEA,SAAA,EADA,C;AALA,oBAFA,KAGA,QADA,C;AALA,OFHA,GEGA,QAoBA,qCG1BA,GH0BA,EAJA,GAIA,CAJA,UAIA,E,IApBA,kC,CA4BA,eACA,QADA,C;AAJA,OIPA,CJOA,QASA,kC,IATA,kD,CKXA,ODIA,CCJA,KAOA,kBACA,GCrBA,ODqBA,MCrBA,CDqBA,CADA;",
+"sources":["com/progressoft/brix/domino/api/client/request/BaseRequest.java","com/progressoft/brix/domino/gwt/client/events/ClientRequestGwtEvent.java","com/google/web/bindery/event/shared/Event.java","com/progressoft/brix/domino/gwt/client/events/ClientRequestEvent.java","com/progressoft/brix/domino/api/client/ClientApp.java","com/progressoft/brix/domino/api/client/events/EventsBus.java","com/progressoft/brix/domino/api/client/events/EventProcessor.java","com/google/gwt/emul/java/lang/Object.java","com/progressoft/brix/domino/gwt/client/request/ClientRouter.java","com/progressoft/brix/domino/gwt/client/events/ClientEventFactory.java"],
+"names":[],
+"x_gwt_permutation":0,
+"x_gwt_fragment":1
+}
