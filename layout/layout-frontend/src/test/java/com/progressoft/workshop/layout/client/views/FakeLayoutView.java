@@ -12,11 +12,6 @@ public class FakeLayoutView implements LayoutView {
     private LayoutContext.Content content;
 
     @Override
-    public IsWidget get() {
-        return null;
-    }
-
-    @Override
     public void show() {
         shown = true;
     }

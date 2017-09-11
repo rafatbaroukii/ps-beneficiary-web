@@ -1,4 +1,4 @@
-<div data-element="rootDiv">
+<div id="rootDiv" data-element="rootDiv" height="calc(100vh - 65px)">
     <style is="custom-style">
     html, body {
       margin: 0;
@@ -41,11 +41,12 @@
 
     .contentContainer{
         margin-top: 64px !important;
+        height: 100%;
     }
 
     </style>
 
-    <app-header reveals data-element="header">
+    <app-header data-element="header" condenses>
         <app-toolbar>
             <div main-title>Beneficiary</div>
         </app-toolbar>

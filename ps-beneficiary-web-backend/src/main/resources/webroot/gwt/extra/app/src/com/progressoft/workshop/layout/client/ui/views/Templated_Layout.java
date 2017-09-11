@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 public final class Templated_Layout extends Layout {
 
     static interface InnerHtml extends SafeHtmlTemplates {
-        @Template("<style is=\"custom-style\">    html, body {      margin: 0;      font-family: 'Roboto', 'Noto', sans-serif;      -webkit-font-smoothing: antialiased;      background: #f1f1f1;      max-height: 368px;    }    app-toolbar {      background-color: #4285f4;      color: #fff;    }    paper-icon-button {      --paper-icon-button-ink-color: white;    }    paper-icon-button + [main-title] {      margin-left: 24px;    }    paper-progress {      display: block;      width: 100%;      --paper-progress-active-color: rgba(255, 255, 255, 0.5);      --paper-progress-container-color: transparent;    }    app-header {      @apply --layout-fixed-top;      color: #fff;      --app-header-background-rear-layer: {        background-color: #ef6c00;      };    }    app-drawer {      --app-drawer-scrim-background: rgba(0, 0, 100, 0.8);      --app-drawer-content-container: {        background-color: #B0BEC5;      }    }       #contentDiv{            margin-top: 64px !important;       }    </style> <app-header reveals data-element=\"header\">  <app-toolbar>   <div main-title>   Beneficiary  </div>  </app-toolbar> </app-header> <div id=\"contentDiv\" data-element=\"contentDiv\">  <dom-bind>   <template is=\"dom-bind\">    <vaadin-grid items=\"[{&quot;name&quot;: &quot;John&quot;, &quot;surname&quot;: &quot;Lennon&quot;, &quot;role&quot;: &quot;singer&quot;}, {&quot;name&quot;: &quot;Ringo&quot;, &quot;surname&quot;: &quot;Starr&quot;, &quot;role&quot;: &quot;drums&quot;}]\" visible-rows=\"8\">     <table>      <colgroup>       <col name=\"name.first\" width=\"150px\">       <col name=\"name.last\" width=\"150px\">       <col name=\"email\" flex width=\"150px\">      </colgroup>     </table>    </vaadin-grid>   </template>  </dom-bind> </div>")
+        @Template("<style is=\"custom-style\">    html, body {      margin: 0;      font-family: 'Roboto', 'Noto', sans-serif;      -webkit-font-smoothing: antialiased;      background: #f1f1f1;      max-height: 368px;    }    app-toolbar {      background-color: #4285f4;      color: #fff;    }    paper-icon-button {      --paper-icon-button-ink-color: white;    }    paper-icon-button + [main-title] {      margin-left: 24px;    }    paper-progress {      display: block;      width: 100%;      --paper-progress-active-color: rgba(255, 255, 255, 0.5);      --paper-progress-container-color: transparent;    }    app-header {      @apply --layout-fixed-top;      color: #fff;      --app-header-background-rear-layer: {        background-color: #ef6c00;      };    }    app-drawer {      --app-drawer-scrim-background: rgba(0, 0, 100, 0.8);      --app-drawer-content-container: {        background-color: #B0BEC5;      }    }    .contentContainer{        margin-top: 64px !important;    }    </style> <app-header reveals data-element=\"header\">  <app-toolbar>   <div main-title>   Beneficiary  </div>  </app-toolbar> </app-header> <div class=\"contentContainer\" data-element=\"contentContainer\"> </div>")
         SafeHtml value();
     }
 
@@ -33,10 +33,10 @@ public final class Templated_Layout extends Layout {
         } else {
             TemplateUtil.replaceElement(templated_layout_root_element, "header", header);
         }
-        if (this.contentDiv == null) {
-            this.contentDiv = TemplateUtil.<elemental2.dom.HTMLDivElement>resolveElementAs(templated_layout_root_element, "contentDiv");
+        if (this.contentContainer == null) {
+            this.contentContainer = TemplateUtil.<elemental2.dom.HTMLDivElement>resolveElementAs(templated_layout_root_element, "contentContainer");
         } else {
-            TemplateUtil.replaceElement(templated_layout_root_element, "contentDiv", contentDiv);
+            TemplateUtil.replaceElement(templated_layout_root_element, "contentContainer", contentContainer);
         }
     }
 

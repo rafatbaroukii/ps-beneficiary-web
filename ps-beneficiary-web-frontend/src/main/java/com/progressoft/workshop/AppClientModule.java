@@ -32,7 +32,9 @@ public class AppClientModule implements EntryPoint {
                 PaperButtonElement.SRC,
                 VaadinGridElement.SRC));
 
-        ClientApp.make().run();
+        ClientApp.make().run(dominoOptions -> {
+            dominoOptions.setDefaultServiceRoot("http://localhost:8080");
+        });
         LOGGER.info("ps-beneficiary-web Application frontend have been initialized.");
     }
 }

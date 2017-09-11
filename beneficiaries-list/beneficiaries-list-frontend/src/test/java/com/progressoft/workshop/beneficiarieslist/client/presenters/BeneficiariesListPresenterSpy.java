@@ -1,17 +1,25 @@
 package com.progressoft.workshop.beneficiarieslist.client.presenters;
 
-import com.progressoft.workshop.beneficiarieslist.client.presenters.DefaultBeneficiariesListPresenter;
-import com.progressoft.brix.domino.api.shared.extension.MainContext;
+import com.progressoft.workshop.beneficiary.shared.BeneficiaryInfo;
 import com.progressoft.workshop.layout.shared.extension.LayoutContext;
 
-public class BeneficiariesListPresenterSpy extends DefaultBeneficiariesListPresenter{
+import java.util.List;
+
+public class BeneficiariesListPresenterSpy extends DefaultBeneficiariesListPresenter {
 
     private LayoutContext layoutContext;
+    public List<BeneficiaryInfo> beneficiariesList;
 
     @Override
     public void contributeToLayoutModule(LayoutContext context) {
         super.contributeToLayoutModule(context);
-        this.layoutContext=context;
+        this.layoutContext = context;
+    }
+
+    @Override
+    public void onBeneficiariesListReceived(List<BeneficiaryInfo> beneficiaries) {
+        super.onBeneficiariesListReceived(beneficiaries);
+        beneficiariesList = beneficiaries;
     }
 
     @Override

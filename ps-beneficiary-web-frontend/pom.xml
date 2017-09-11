@@ -76,6 +76,26 @@
             <artifactId>layout-shared</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-frontend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-frontend-ui</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiary-external-shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

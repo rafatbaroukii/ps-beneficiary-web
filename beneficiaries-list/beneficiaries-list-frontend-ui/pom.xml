@@ -94,6 +94,8 @@
             <artifactId>vaadin-gwt-polymer-elements</artifactId>
             <version>1.9.4.0-SNAPSHOT</version>
         </dependency>
+
+
     </dependencies>
 
     <build>

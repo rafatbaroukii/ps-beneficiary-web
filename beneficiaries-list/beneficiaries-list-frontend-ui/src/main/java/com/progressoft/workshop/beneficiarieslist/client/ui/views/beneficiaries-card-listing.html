@@ -1,0 +1,37 @@
+<div>
+    <style is="custom-style">
+            paper-scroll-header-panel {
+                @apply(--layout-fit);
+                @apply(--layout-vertical);
+                @apply(--paper-font-common-base);
+                margin-top: 50px;
+            }
+            iron-list {
+                background-color: var(--paper-grey-200, #eee);
+                padding-bottom: 16px;
+            }
+            .item {
+                @apply(--layout-horizontal);
+                margin: 16px 16px 0 16px;
+                padding: 20px;
+                border-radius: 8px;
+                background-color: white;
+                border: 1px solid #ddd;
+            }
+            .avatar {
+                height: 40px;
+                width: 40px;
+                border-radius: 20px;
+                box-sizing: border-box;
+                background-color: #DDD;
+            }
+            .pad {
+                padding: 0 16px;
+                @apply(--layout-flex);
+                @apply(--layout-vertical);
+            }
+    </style>
+
+    <iron-list data-element="list">
+    </iron-list>
+</div>

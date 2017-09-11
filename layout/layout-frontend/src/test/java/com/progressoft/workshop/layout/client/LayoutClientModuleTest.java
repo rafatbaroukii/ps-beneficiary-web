@@ -8,12 +8,11 @@ import com.progressoft.workshop.layout.client.contributions.FakeLayoutContributi
 import com.progressoft.workshop.layout.client.presenters.LayoutPresenter;
 import com.progressoft.workshop.layout.client.presenters.LayoutPresenterSpy;
 import com.progressoft.workshop.layout.client.views.FakeLayoutView;
-import com.progressoft.workshop.layout.shared.extension.LayoutContext;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static com.progressoft.workshop.layout.shared.extension.LayoutContext.*;
+import static com.progressoft.workshop.layout.shared.extension.LayoutContext.Content;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNotNull;
 
@@ -28,13 +27,13 @@ public class LayoutClientModuleTest {
 
     @Before
     public void setUp() {
-//        presenterSpy = new LayoutPresenterSpy();
-//        DominoTestClient.useModules(new LayoutModuleConfiguration(), new TestLayoutModuleConfiguration())
-//                .replacePresenter(LayoutPresenter.class, presenterSpy)
-//                .viewOf(LayoutPresenter.class, view -> fakeView = (FakeLayoutView) view)
-//                .contributionOf(FakeLayoutContribution.class, contribution -> this.fakeContribution = contribution)
-//                .onStartCompleted(clientContext -> this.clientContext = clientContext)
-//                .start();
+        presenterSpy = new LayoutPresenterSpy();
+        DominoTestClient.useModules(new LayoutModuleConfiguration(), new TestLayoutModuleConfiguration())
+                .replacePresenter(LayoutPresenter.class, presenterSpy)
+                .viewOf(LayoutPresenter.class, view -> fakeView = (FakeLayoutView) view)
+                .contributionOf(FakeLayoutContribution.class, contribution -> this.fakeContribution = contribution)
+                .onStartCompleted(clientContext -> this.clientContext = clientContext)
+                .start();
     }
 
     @Test
@@ -54,8 +53,7 @@ public class LayoutClientModuleTest {
 
     @Test
     public void givenLayoutContext_whenSettingTheContent_thenTheContentShouldBeSetInTheView() throws Exception {
-        Content content = new Content() {
-        };
+        Content content = () -> null;
         fakeContribution.getContext().setContent(content);
         assertThat(fakeView.getContent()).isEqualTo(content);
     }

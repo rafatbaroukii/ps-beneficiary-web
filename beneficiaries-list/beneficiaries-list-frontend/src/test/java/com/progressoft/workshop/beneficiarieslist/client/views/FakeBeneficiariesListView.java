@@ -1,17 +1,24 @@
 package com.progressoft.workshop.beneficiarieslist.client.views;
 
-import com.google.gwt.user.client.ui.IsWidget;
-import com.progressoft.workshop.beneficiarieslist.client.views.BeneficiariesListView;
-import com.progressoft.workshop.beneficiarieslist.client.presenters.BeneficiariesListPresenter;
 import com.progressoft.brix.domino.api.client.annotations.UiView;
+import com.progressoft.workshop.beneficiarieslist.client.presenters.BeneficiariesListPresenter;
+import com.progressoft.workshop.beneficiary.shared.BeneficiaryInfo;
 
-@UiView(presentable=BeneficiariesListPresenter.class)
+import java.util.ArrayList;
+import java.util.List;
+
+@UiView(presentable = BeneficiariesListPresenter.class)
 public class FakeBeneficiariesListView implements BeneficiariesListView {
 
-    public boolean revealed;
+    public List<BeneficiaryInfo> beneficiaries = new ArrayList<>();
 
     @Override
-    public IsWidget get() {
+    public Object get() {
         return null;
+    }
+
+    @Override
+    public void addBeneficiary(BeneficiaryInfo beneficiaryInfo) {
+        beneficiaries.add(beneficiaryInfo);
     }
 }
