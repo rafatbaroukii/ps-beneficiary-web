@@ -23,22 +23,12 @@ public class AppClientModule implements EntryPoint {
 
     public void onModuleLoad() {
 
-//        <!--<link rel="import" href="/static/app/bower_components/polymer/polymer.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/app-drawer/app-drawer.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/app-header/app-header.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/app-toolbar/app-toolbar.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/iron-flex-layout/iron-flex-layout.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/iron-icons/iron-icons.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/paper-icon-button/paper-icon-button.html">-->
-//    <!--<link rel="import" href="/static/app/bower_components/paper-progress/paper-progress.html">-->
-
         Polymer.importHref(Arrays.asList(AppDrawerElement.SRC,
                 AppHeaderElement.SRC,
                 AppToolbarElement.SRC,
                 IronFlexLayoutElement.SRC,
                 IronIconsElement.SRC,
                 PaperIconButtonElement.SRC,
-                PaperProgressElement.SRC,
                 PaperButtonElement.SRC,
                 VaadinGridElement.SRC));
 

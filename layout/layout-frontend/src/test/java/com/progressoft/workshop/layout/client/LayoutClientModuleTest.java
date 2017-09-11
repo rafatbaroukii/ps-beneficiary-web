@@ -28,13 +28,13 @@ public class LayoutClientModuleTest {
 
     @Before
     public void setUp() {
-        presenterSpy = new LayoutPresenterSpy();
-        DominoTestClient.useModules(new LayoutModuleConfiguration(), new TestLayoutModuleConfiguration())
-                .replacePresenter(LayoutPresenter.class, presenterSpy)
-                .viewOf(LayoutPresenter.class, view -> fakeView = (FakeLayoutView) view)
-                .contributionOf(FakeLayoutContribution.class, contribution -> this.fakeContribution = contribution)
-                .onStartCompleted(clientContext -> this.clientContext = clientContext)
-                .start();
+//        presenterSpy = new LayoutPresenterSpy();
+//        DominoTestClient.useModules(new LayoutModuleConfiguration(), new TestLayoutModuleConfiguration())
+//                .replacePresenter(LayoutPresenter.class, presenterSpy)
+//                .viewOf(LayoutPresenter.class, view -> fakeView = (FakeLayoutView) view)
+//                .contributionOf(FakeLayoutContribution.class, contribution -> this.fakeContribution = contribution)
+//                .onStartCompleted(clientContext -> this.clientContext = clientContext)
+//                .start();
     }
 
     @Test

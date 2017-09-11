@@ -17,6 +17,6 @@ public class DefaultLayoutPresenter extends BaseClientPresenter<LayoutView> impl
     public void contributeToMainModule(MainContext context) {
         LOGGER.info("Main context received at presenter " + DefaultLayoutPresenter.class.getSimpleName());
         view.show();
-        applyContributions(LayoutExtensionPoint.class, () -> view::setContent);
+//        applyContributions(LayoutExtensionPoint.class, () -> view::setContent);
     }
 }
