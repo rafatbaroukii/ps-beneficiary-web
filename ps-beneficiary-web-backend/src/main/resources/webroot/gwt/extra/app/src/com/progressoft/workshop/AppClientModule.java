@@ -8,6 +8,7 @@ import com.vaadin.polymer.app.AppHeaderElement;
 import com.vaadin.polymer.app.AppToolbarElement;
 import com.vaadin.polymer.iron.IronFlexLayoutElement;
 import com.vaadin.polymer.iron.IronIconsElement;
+import com.vaadin.polymer.iron.IronListElement;
 import com.vaadin.polymer.paper.PaperButtonElement;
 import com.vaadin.polymer.paper.PaperIconButtonElement;
 import com.vaadin.polymer.paper.PaperProgressElement;
@@ -30,7 +31,8 @@ public class AppClientModule implements EntryPoint {
                 IronIconsElement.SRC,
                 PaperIconButtonElement.SRC,
                 PaperButtonElement.SRC,
-                VaadinGridElement.SRC));
+                VaadinGridElement.SRC,
+                IronListElement.SRC));
 
         ClientApp.make().run(dominoOptions -> {
             dominoOptions.setDefaultServiceRoot("http://localhost:8080");

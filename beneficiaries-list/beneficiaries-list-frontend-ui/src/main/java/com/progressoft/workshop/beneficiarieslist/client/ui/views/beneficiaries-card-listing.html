@@ -1,37 +1,77 @@
 <div>
     <style is="custom-style">
-            paper-scroll-header-panel {
-                @apply(--layout-fit);
-                @apply(--layout-vertical);
-                @apply(--paper-font-common-base);
-                margin-top: 50px;
-            }
-            iron-list {
-                background-color: var(--paper-grey-200, #eee);
-                padding-bottom: 16px;
-            }
-            .item {
-                @apply(--layout-horizontal);
-                margin: 16px 16px 0 16px;
-                padding: 20px;
-                border-radius: 8px;
-                background-color: white;
-                border: 1px solid #ddd;
-            }
-            .avatar {
-                height: 40px;
-                width: 40px;
-                border-radius: 20px;
-                box-sizing: border-box;
-                background-color: #DDD;
-            }
-            .pad {
-                padding: 0 16px;
-                @apply(--layout-flex);
-                @apply(--layout-vertical);
-            }
-    </style>
+        paper-scroll-header-panel {
+            @apply(--layout-fit);
+            @apply(--layout-vertical);
+            @apply(--paper-font-common-base);
+            margin-top: 50px;
+        }
+        iron-list {
+         --iron-list-items-container: {
+            border: 1px solid #f00;
+            margin : 0px 5px 0px 5px;
+        };
+            background-color: var(--paper-grey-200, #eee);
+            padding-bottom: 16px;
+        }
 
-    <iron-list data-element="list">
-    </iron-list>
+
+        .item {
+            @apply(--layout-horizontal);
+            padding: 20px;
+            border-radius: 0px;
+            background-color: white;
+            border-bottom : 1px solid #f00;
+        }
+
+        iron-list .item:last-child{
+            border-bottom : 0px solid #f00 !important;
+        }
+
+        .avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 20px;
+            box-sizing: border-box;
+            background-color: #DDD;
+        }
+        .pad {
+            padding: 0 16px;
+            @apply(--layout-flex);
+            @apply(--layout-vertical);
+        }
+
+        .primary {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .secondary {
+            font-size: 14px;
+        }
+        .dim {
+            color: gray;
+        }
+
+
+    </style>
+    <app-toolbar>
+        <div main-title>Drive title</div>
+    </app-toolbar>
+
+    <div id="scrollTarget" class="fit">
+        <iron-list as="item" data-element="list" scroll-target="document" scroll-offset="10" fit>
+            <template>
+                <div>
+                    <li class="item">
+                        <div class="pad">
+                            <div class="primary">[[item.name]]</div>
+                            <div class="secondary">[[item.cif]]</div>
+                            <div class="secondary dim">[[item.country]]</div>
+                        </div>
+                        <iron-icon icon="menu"/>
+                    </li>
+                </div>
+            </template>
+        </iron-list>
+    </div>
 </div>

@@ -19,14 +19,7 @@ public abstract class BeneficiariesCardListing implements IsElement<HTMLElement>
 
     @PostConstruct
     void init(){
-        final Array<JsBeneficiary> items = new Array<>();
-
-        JsBeneficiary beneficiary=new JsBeneficiary();
-        beneficiary.name="xxx";
-        beneficiary.cif="eee";
-        beneficiary.country="JOR";
-        items.push(beneficiary);
-        list.setItems(items);
+        list.setItems(new Array<JsBeneficiary>());
     }
 
     public static BeneficiariesCardListing create() {

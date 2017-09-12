@@ -4,7 +4,7 @@ public class Templated_BeneficiariesList_InnerHtmlImpl implements com.progressof
   
   public com.google.gwt.safehtml.shared.SafeHtml value() {
     StringBuilder sb = new java.lang.StringBuilder();
-    sb.append("<table>  <colgroup>   <col name=\"name\" width=\"150px\">   <col name=\"cif\" width=\"150px\">   <col name=\"role\" flex>  </colgroup> </table>");
+    sb.append("<table>  <colgroup>   <col name=\"name\" width=\"250px\">   <col name=\"cif\" width=\"250px\">   <col name=\"country\" flex>  </colgroup> </table>");
 return new com.google.gwt.safehtml.shared.OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml(sb.toString());
 }
 }

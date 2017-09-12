@@ -1,0 +1,10 @@
+package com.progressoft.workshop.beneficiarieslist.client.ui.views;
+
+public class Templated_BeneficiariesCardListing_InnerHtmlImpl implements com.progressoft.workshop.beneficiarieslist.client.ui.views.Templated_BeneficiariesCardListing.InnerHtml {
+  
+  public com.google.gwt.safehtml.shared.SafeHtml value() {
+    StringBuilder sb = new java.lang.StringBuilder();
+    sb.append("<style is=\"custom-style\">        paper-scroll-header-panel {            @apply(--layout-fit);            @apply(--layout-vertical);            @apply(--paper-font-common-base);            margin-top: 50px;        }        iron-list {            background-color: var(--paper-grey-200, #eee);            padding-bottom: 16px;            padding-top : 5px;            flex: 1 1 auto;        }        .item {            @apply(--layout-horizontal);            margin: 16px 16px 0 16px;            padding: 20px;            border-radius: 8px;            background-color: white;            border: 1px solid #ddd;        }        .avatar {            height: 40px;            width: 40px;            border-radius: 20px;            box-sizing: border-box;            background-color: #DDD;        }        .pad {            padding: 0 16px;            @apply(--layout-flex);            @apply(--layout-vertical);        }        .primary {            font-size: 16px;            font-weight: bold;        }        .secondary {            font-size: 14px;        }        .dim {            color: gray;        }    </style> <iron-list as=\"item\" data-element=\"list\">  <template>   <div>    <div class=\"item\">     <div class=\"pad\">      <div class=\"primary\">      [[item.name]]     </div>      <div class=\"secondary\">      [[item.cif]]     </div>      <div class=\"secondary dim\">      [[item.country]]     </div>     </div>     <iron-icon icon=\"star\" />    </div>   </div>  </template> </iron-list>");
+return new com.google.gwt.safehtml.shared.OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml(sb.toString());
+}
+}

@@ -4,22 +4,24 @@ import com.progressoft.brix.domino.api.client.annotations.UiView;
 import com.progressoft.workshop.beneficiarieslist.client.presenters.BeneficiariesListPresenter;
 import com.progressoft.workshop.beneficiarieslist.client.views.BeneficiariesListView;
 import com.progressoft.workshop.beneficiary.shared.BeneficiaryInfo;
-import com.vaadin.polymer.vaadin.VaadinGridElement;
-import elemental2.core.Array;
+import elemental2.dom.HTMLDivElement;
+import elemental2.dom.HTMLElement;
 import jsinterop.base.Js;
 
 @UiView(presentable = BeneficiariesListPresenter.class)
-public class DefaultBeneficiariesListView implements BeneficiariesListView<VaadinGridElement> {
+public class DefaultBeneficiariesListView implements BeneficiariesListView<HTMLElement> {
 
     private BeneficiariesList beneficiariesList = BeneficiariesList.create();
+    private BeneficiariesCardListing beneficiariesCardListing = BeneficiariesCardListing.create();
 
     public DefaultBeneficiariesListView() {
-
+//        get().style.height= CSSProperties.HeightUnionType.of("100%");
+//        get().setItems(new Array<JsBeneficiary>());
     }
 
     @Override
-    public VaadinGridElement get() {
-        return Js.cast(beneficiariesList.asElement());
+    public HTMLDivElement get() {
+        return Js.cast(beneficiariesCardListing.asElement());
     }
 
     @Override
@@ -29,7 +31,6 @@ public class DefaultBeneficiariesListView implements BeneficiariesListView<Vaadi
         jsBeneficiary.cif = beneficiaryInfo.cif;
         jsBeneficiary.country = beneficiaryInfo.alpha3Code;
 
-        Array<JsBeneficiary> items = (Array<JsBeneficiary>) get().getItems();
-        items.push(jsBeneficiary);
+        beneficiariesCardListing.list.getItems().push(jsBeneficiary);
     }
 }

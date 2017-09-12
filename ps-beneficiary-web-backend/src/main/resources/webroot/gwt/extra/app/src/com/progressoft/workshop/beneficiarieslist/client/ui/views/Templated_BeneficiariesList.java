@@ -15,7 +15,7 @@ import javax.annotation.Generated;
 public final class Templated_BeneficiariesList extends BeneficiariesList {
 
     static interface InnerHtml extends SafeHtmlTemplates {
-        @Template("<table>  <colgroup>   <col name=\"name\" width=\"150px\">   <col name=\"cif\" width=\"150px\">   <col name=\"role\" flex>  </colgroup> </table>")
+        @Template("<table>  <colgroup>   <col name=\"name\" width=\"250px\">   <col name=\"cif\" width=\"250px\">   <col name=\"country\" flex>  </colgroup> </table>")
         SafeHtml value();
     }
 
@@ -25,6 +25,7 @@ public final class Templated_BeneficiariesList extends BeneficiariesList {
  public Templated_BeneficiariesList() {
 
         this.templated_beneficiarieslist_root_element = (HTMLElement)DomGlobal.document.createElement("vaadin-grid");
+        this.templated_beneficiarieslist_root_element.setAttribute("class", "appgrid");
         this.templated_beneficiarieslist_root_element.setAttribute("visible-rows", "8");
         this.templated_beneficiarieslist_root_element.setAttribute("selection-mode", "multi");
         this.templated_beneficiarieslist_root_element.innerHTML = INNER_HTML.value().asString();
