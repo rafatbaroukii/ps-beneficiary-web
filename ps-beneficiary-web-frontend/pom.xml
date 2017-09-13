@@ -68,8 +68,20 @@
         </dependency>
         <dependency>
             <groupId>com.progressoft.workshop</groupId>
+            <artifactId>layout-frontend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
             <artifactId>layout-frontend-ui</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>layout-frontend-ui</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
         </dependency>
         <dependency>
             <groupId>com.progressoft.workshop</groupId>
@@ -78,8 +90,20 @@
         </dependency>
         <dependency>
             <groupId>com.progressoft.workshop</groupId>
+            <artifactId>layout-shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
             <artifactId>beneficiaries-list-frontend</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-frontend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
         </dependency>
         <dependency>
             <groupId>com.progressoft.workshop</groupId>
@@ -88,8 +112,20 @@
         </dependency>
         <dependency>
             <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-frontend-ui</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
             <artifactId>beneficiaries-list-shared</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
         </dependency>
         <dependency>
             <groupId>com.progressoft.workshop</groupId>

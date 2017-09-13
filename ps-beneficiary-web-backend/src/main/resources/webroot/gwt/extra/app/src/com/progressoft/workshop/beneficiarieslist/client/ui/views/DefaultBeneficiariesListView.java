@@ -1,9 +1,11 @@
 package com.progressoft.workshop.beneficiarieslist.client.ui.views;
 
+import com.google.gwt.core.client.GWT;
 import com.progressoft.brix.domino.api.client.annotations.UiView;
 import com.progressoft.workshop.beneficiarieslist.client.presenters.BeneficiariesListPresenter;
 import com.progressoft.workshop.beneficiarieslist.client.views.BeneficiariesListView;
 import com.progressoft.workshop.beneficiary.shared.BeneficiaryInfo;
+import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import jsinterop.base.Js;
@@ -32,5 +34,6 @@ public class DefaultBeneficiariesListView implements BeneficiariesListView<HTMLE
         jsBeneficiary.country = beneficiaryInfo.alpha3Code;
 
         beneficiariesCardListing.list.getItems().push(jsBeneficiary);
+
     }
 }

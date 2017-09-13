@@ -6,14 +6,10 @@ import com.vaadin.polymer.Polymer;
 import com.vaadin.polymer.app.AppDrawerElement;
 import com.vaadin.polymer.app.AppHeaderElement;
 import com.vaadin.polymer.app.AppToolbarElement;
-import com.vaadin.polymer.iron.IronFlexLayoutElement;
-import com.vaadin.polymer.iron.IronIconsElement;
-import com.vaadin.polymer.iron.IronListElement;
-import com.vaadin.polymer.paper.PaperButtonElement;
-import com.vaadin.polymer.paper.PaperIconButtonElement;
-import com.vaadin.polymer.paper.PaperProgressElement;
-import com.vaadin.polymer.vaadin.Column;
+import com.vaadin.polymer.iron.*;
+import com.vaadin.polymer.paper.*;
 import com.vaadin.polymer.vaadin.VaadinGridElement;
+import elemental2.dom.XMLHttpRequest;
 
 import java.util.Arrays;
 import java.util.logging.Logger;
@@ -32,11 +28,18 @@ public class AppClientModule implements EntryPoint {
                 PaperIconButtonElement.SRC,
                 PaperButtonElement.SRC,
                 VaadinGridElement.SRC,
-                IronListElement.SRC));
+                IronListElement.SRC,
+                PaperDrawerPanelElement.SRC,
+                PaperHeaderPanelElement.SRC,
+                PaperToolbarElement.SRC,
+                PaperFabElement.SRC,
+                IronAjaxElement.SRC,
+                IronImageElement.SRC
+        ));
 
-        ClientApp.make().run(dominoOptions -> {
-            dominoOptions.setDefaultServiceRoot("http://localhost:8080");
-        });
+
+        ClientApp.make().run(dominoOptions ->
+                dominoOptions.setDefaultServiceRoot("http://172.20.202.81:8080"));
         LOGGER.info("ps-beneficiary-web Application frontend have been initialized.");
     }
 }

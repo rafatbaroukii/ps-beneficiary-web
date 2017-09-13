@@ -34,11 +34,6 @@ public class DefaultBeneficiariesListView implements BeneficiariesListView<HTMLE
         jsBeneficiary.country = beneficiaryInfo.alpha3Code;
 
         beneficiariesCardListing.list.getItems().push(jsBeneficiary);
-        try {
-            beneficiariesCardListing.list.notifyResize();
-        }catch (Exception e){
-            GWT.log("", e);
-        }
 
     }
 }

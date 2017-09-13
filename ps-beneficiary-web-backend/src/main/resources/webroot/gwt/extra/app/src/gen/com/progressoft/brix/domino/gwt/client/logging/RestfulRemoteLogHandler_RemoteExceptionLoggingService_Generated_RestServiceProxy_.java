@@ -26,7 +26,7 @@ public class RestfulRemoteLogHandler_RemoteExceptionLoggingService_Generated_Res
     final com.progressoft.brix.domino.api.shared.logging.SerializableLogRecord final_record = record;
     final org.fusesource.restygwt.client.Method __method =
     getResource()
-    .resolve("remoteLogging")
+    .resolve("/service/remoteLogging")
     .post();
     __method.setDispatcher(this.dispatcher);
     __method.header(org.fusesource.restygwt.client.Resource.HEADER_ACCEPT, "application/json");
