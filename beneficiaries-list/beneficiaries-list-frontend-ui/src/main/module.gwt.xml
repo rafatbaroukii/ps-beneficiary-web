@@ -2,7 +2,8 @@
 <module>
   <inherits name="com.google.gwt.user.User" />
   <inherits name="com.google.gwt.user.theme.clean.Clean" />
-  <inherits name="com.progressoft.workshop.BeneficiaryExternalShared"/>
+  <inherits name="gwt.material.design.GwtMaterialWithJQuery" />
+  <inherits name="gwt.material.design.addins.GwtMaterialAddins" />
 
 
   <source path="" />

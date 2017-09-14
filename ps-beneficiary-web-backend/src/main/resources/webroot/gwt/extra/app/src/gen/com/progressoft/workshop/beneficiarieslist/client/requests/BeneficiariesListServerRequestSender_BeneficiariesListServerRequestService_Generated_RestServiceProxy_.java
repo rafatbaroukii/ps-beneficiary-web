@@ -26,10 +26,11 @@ public class BeneficiariesListServerRequestSender_BeneficiariesListServerRequest
     final com.progressoft.workshop.beneficiarieslist.shared.request.BeneficiariesListRequest final_request = request;
     final org.fusesource.restygwt.client.Method __method =
     getResource()
-    .resolve("/api/beneficiaries")
-    .get();
+    .resolve("BeneficiariesListRequest")
+    .post();
     __method.setDispatcher(this.dispatcher);
     __method.header(org.fusesource.restygwt.client.Resource.HEADER_ACCEPT, "application/json");
+    __method.header(org.fusesource.restygwt.client.Resource.HEADER_CONTENT_TYPE, "application/json");
     __method.json(com.progressoft.workshop.beneficiarieslist.shared.request.BeneficiariesListRequest_Generated_JsonEncoderDecoder_.INSTANCE.encode(request));
     try {
       __method.send(new org.fusesource.restygwt.client.AbstractRequestCallback<com.progressoft.workshop.beneficiarieslist.shared.response.BeneficiariesListResponse>(__method, callback) {

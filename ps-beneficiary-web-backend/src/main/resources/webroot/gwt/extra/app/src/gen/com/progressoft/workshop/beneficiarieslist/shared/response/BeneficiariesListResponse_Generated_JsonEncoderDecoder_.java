@@ -10,7 +10,7 @@ public class BeneficiariesListResponse_Generated_JsonEncoderDecoder_ extends org
     }
     com.google.gwt.json.client.JSONObject rc = new com.google.gwt.json.client.JSONObject();
     com.progressoft.workshop.beneficiarieslist.shared.response.BeneficiariesListResponse parseValue = (com.progressoft.workshop.beneficiarieslist.shared.response.BeneficiariesListResponse)value;
-    isNotNullValuePut(org.fusesource.restygwt.client.AbstractJsonEncoderDecoder.toJSON(parseValue.getBeneficiaries(), com.progressoft.workshop.beneficiary.shared.BeneficiaryInfo_Generated_JsonEncoderDecoder_.INSTANCE), rc, "beneficiaries");
+    isNotNullValuePut(org.fusesource.restygwt.client.AbstractJsonEncoderDecoder.STRING.encode(parseValue.getServerMessage()), rc, "serverMessage");
     return rc;
   }
   
@@ -20,7 +20,7 @@ public class BeneficiariesListResponse_Generated_JsonEncoderDecoder_ extends org
     }
     com.google.gwt.json.client.JSONObject object = toObject(value);
     com.progressoft.workshop.beneficiarieslist.shared.response.BeneficiariesListResponse rc = new com.progressoft.workshop.beneficiarieslist.shared.response.BeneficiariesListResponse();
-    rc.setBeneficiaries(getValueToSet(org.fusesource.restygwt.client.AbstractJsonEncoderDecoder.toList(object.get("beneficiaries"), com.progressoft.workshop.beneficiary.shared.BeneficiaryInfo_Generated_JsonEncoderDecoder_.INSTANCE), null));
+    rc.setServerMessage(getValueToSet(org.fusesource.restygwt.client.AbstractJsonEncoderDecoder.STRING.decode(object.get("serverMessage")), null));
     return rc;
   }
   

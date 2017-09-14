@@ -11,7 +11,7 @@ import com.progressoft.workshop.beneficiarieslist.client.requests.BeneficiariesL
 import com.progressoft.workshop.beneficiarieslist.client.requests.ObtainLayoutExtensionPointForBeneficiariesListPresenterClientRequest;
 import com.progressoft.brix.domino.api.client.extension.ContributionsRegistry;
 import com.progressoft.workshop.beneficiarieslist.client.contributions.BeneficiariesListPresenterContributionToLayoutExtensionPoint;
-import com.progressoft.workshop.layout.shared.extension.LayoutExtensionPoint;
+import com.progressoft.brix.components.layout.shared.extension.LayoutExtensionPoint;
 import com.progressoft.brix.domino.api.client.request.RequestRestSendersRegistry;
 import com.progressoft.brix.domino.api.client.request.LazyRequestRestSenderLoader;
 import com.progressoft.brix.domino.api.client.request.RequestRestSender;

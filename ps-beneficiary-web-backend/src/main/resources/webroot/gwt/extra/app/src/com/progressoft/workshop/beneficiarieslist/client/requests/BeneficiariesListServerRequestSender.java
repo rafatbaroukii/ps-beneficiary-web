@@ -8,7 +8,7 @@ import com.progressoft.workshop.beneficiarieslist.shared.request.BeneficiariesLi
 import com.progressoft.workshop.beneficiarieslist.shared.response.BeneficiariesListResponse;
 import com.progressoft.brix.domino.api.client.annotations.RequestSender;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -20,11 +20,12 @@ import com.progressoft.brix.domino.api.client.ServiceRootMatcher;
 @RequestSender(value = BeneficiariesListServerRequest.class)
 public class BeneficiariesListServerRequestSender implements RequestRestSender<BeneficiariesListRequest>{
 
-	public static final String PATH="/api/beneficiaries";
+	public static final String PATH="BeneficiariesListRequest";
 	public interface BeneficiariesListServerRequestService extends RestService {
-        @GET
+        @POST
         @Path(PATH)
         @Produces(MediaType.APPLICATION_JSON)
+        @Consumes(MediaType.APPLICATION_JSON)
         void send(BeneficiariesListRequest request, MethodCallback<BeneficiariesListResponse> callback);
     }
 

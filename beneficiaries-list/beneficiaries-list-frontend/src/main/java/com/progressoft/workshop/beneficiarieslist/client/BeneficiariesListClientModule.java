@@ -13,7 +13,7 @@ public class BeneficiariesListClientModule implements EntryPoint {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BeneficiariesListClientModule.class);
 
 	public void onModuleLoad() {
-		LOGGER.info("Initializing BeneficiariesList client module ...");
+		LOGGER.info("Initializing BeneficiariesList frontend module ...");
 		new ModuleConfigurator().configureModule(new BeneficiariesListModuleConfiguration());
 	}
 }

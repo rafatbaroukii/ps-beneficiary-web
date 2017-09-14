@@ -101,8 +101,7 @@
   <modules>
     <module>ps-beneficiary-web-frontend</module>
     <module>ps-beneficiary-web-backend</module>
-      <module>layout</module>
-      <module>beneficiaries-list</module>
       <module>beneficiary-external</module>
+      <module>beneficiaries-list</module>
   </modules>
 </project>

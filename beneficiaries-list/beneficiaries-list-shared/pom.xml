@@ -29,8 +29,6 @@
             <artifactId>beneficiary-external-shared</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -51,5 +49,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
