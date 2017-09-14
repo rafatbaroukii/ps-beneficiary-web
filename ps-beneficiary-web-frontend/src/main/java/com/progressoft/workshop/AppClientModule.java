@@ -34,12 +34,13 @@ public class AppClientModule implements EntryPoint {
                 PaperToolbarElement.SRC,
                 PaperFabElement.SRC,
                 IronAjaxElement.SRC,
-                IronImageElement.SRC
+                IronImageElement.SRC,
+                PaperCardElement.SRC
         ));
 
 
         ClientApp.make().run(dominoOptions ->
-                dominoOptions.setDefaultServiceRoot("http://172.20.202.81:8080"));
+                dominoOptions.setDefaultServiceRoot("http://localhost:8080"));
         LOGGER.info("ps-beneficiary-web Application frontend have been initialized.");
     }
 }

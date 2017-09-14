@@ -71,5 +71,6 @@
         <module>beneficiaries-list-frontend</module>
         <module>beneficiaries-list-frontend-ui</module>
         <module>beneficiaries-list-shared</module>
+        <module>beneficiaries-list-resources</module>
     </modules>
 </project>

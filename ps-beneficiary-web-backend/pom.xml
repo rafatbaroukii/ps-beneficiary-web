@@ -33,6 +33,11 @@
             <artifactId>domino-remote-logging</artifactId>
             <version>${domino.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.progressoft.workshop</groupId>
+            <artifactId>beneficiaries-list-resources</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -122,3 +122,7 @@ src/main/webapp/gwt_bree/
 
 **/bin/
 
+.vertx
+**/.vertx/*.*
+
+

@@ -11,9 +11,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.HttpMethod;
 
+
 @Request
-@Path(value = "/api/beneficiaries", method = HttpMethod.GET)
+@Path(value = "", method = HttpMethod.GET)
 public class BeneficiariesListServerRequest extends ClientServerRequest<BeneficiariesListPresenter, BeneficiariesListRequest, BeneficiariesListResponse> {
+
+    private String sample="<p>Sample</p>";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BeneficiariesListServerRequest.class);
 
